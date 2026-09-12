@@ -34,13 +34,13 @@ The system predicts temperature and humidity 15-30 minutes ahead using GRU, XGBo
  
 | Layer | Component | Status |
 |---|---|---|
-| Python | `wageningen_data_pipeline.py` — dataset prep, training, model export | existing |
+| Python | `wageningen_data_pipeline.py` — dataset prep, training, model export | Complete |
 | Python | Model inference service — MQTT subscribe, real-time inference, publish actuation | to be built |
 | Edge | Inference + rule-based anomaly detection + `EdgeSimulator` | to be built |
-| Node.js | HIL simulator — replay dataset or stream live test data, inject outages | existing |
-| Node.js | Backend API — REST/WSS, MongoDB storage, decision attribution logs | existing |
-| Node.js | n8n + Telegram bot — mobile alerts, manual override commands | existing |
-| Node.js | React dashboard — telemetry, forecasts, model comparison, overrides | this repo |
+| Node.js | HIL simulator — replay dataset or stream live test data, inject outages | to be built |
+| Node.js | Backend API — REST/WSS, MongoDB storage, decision attribution logs | to be built |
+| Node.js | n8n + Telegram bot — mobile alerts, manual override commands | to be built |
+| Node.js | React dashboard — telemetry, forecasts, model comparison, overrides | to be built |
  
 ## Dashboard
  
