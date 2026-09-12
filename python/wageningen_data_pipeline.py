@@ -15,7 +15,7 @@ def add_sensor_noise(series, std_multiplier=0.03,drift_factor=0.0005,spike_prob=
         std_dev = 1.0
 
     # Gaussian noise (2-5% of signal std)
-    noise = np.random(0,std_dev*std_multiplier, len(series))
+    noise = np.random.normal(0,std_dev*std_multiplier, len(series))
 
     #Gradual noise (2-5% of signal std)
     drift = np.linspace(0, std_dev * drift_factor * len(series), len(series))
@@ -23,7 +23,8 @@ def add_sensor_noise(series, std_multiplier=0.03,drift_factor=0.0005,spike_prob=
     # 1% Occasional spikes/glitches
     spikes = np.where(
         np.random.rand(len(series)) < spike_prob,
-        std_dev * 5 * np.random.choice([-1,1],len(series))
+        std_dev * 5 * np.random.choice([-1,1],len(series)),
+        0
     )
 
     return series + noise + drift + spikes
@@ -37,7 +38,7 @@ def prepare_data(data_dir):
 
     if not os.path.exists(csv_path):
         raise FileNotFoundError(
-            f"\n❌ ERROR: Raw dataset not found at '{csv_path}'.\n"
+            f"\n ERROR: Raw dataset not found at '{csv_path}'.\n"
             f"Please ensure you have generated 'climate_data.csv' and placed it in the '{data_dir}' folder."
         )
 
@@ -72,19 +73,19 @@ def prepare_data(data_dir):
 
     # Create supervised learning arrays from the Noisy data
     # (Predicting next step Temperature based on noisy current data)
-    X_train = train_noisy_df.iloc[:-1].values
-    y_tarin = train_noisy_df['Temperature'].iloc[1:].values
 
+    X_train = train_noisy_df.iloc[:-1].values
+    y_train = train_noisy_df['Temperature'].iloc[1:].values
+    
     X_test = test_noisy_df.iloc[:-1].values
-    y_test = test_noisy_df.iloc['Tempetature'].iloc[1:].values
+    y_test = test_noisy_df['Temperature'].iloc[1:].values
 
     np.save(os.path.join(data_dir, "X_train.npy"), X_train)
-    np.save(os.path.join(data_dir,"y_train.npy"),y_tarin)
+    np.save(os.path.join(data_dir,"y_train.npy"),y_train)
     np.save(os.path.join(data_dir,"X_test.npy"), X_test)
     np.save(os.path.join(data_dir,"y_test.npy"), y_test)
 
     print(f"Saved Numpy arrays (X_train, y_train, X_test, y_test) to {data_dir}")
-
 
 ## Train Mode Functions
 def reshape_for_rnn(X_data, window=10):
