@@ -129,7 +129,7 @@ def train_models(data_dir, models_dir):
     X_train_rnn = reshape_for_rnn(X_train, window=window_size)
 
     #Trim y_train to match the reshaped X_train_run length
-    y_train_rnn = y_train[:X_train_run.shape[0]]
+    y_train_rnn = y_train[:X_train_rnn.shape[0]]
 
     # -- Train GRU --
     print("\nTraining GRU ...")

@@ -27,5 +27,5 @@ df_final = df[list(existing_cols.keys())].rename(columns=existing_cols)
 output_path = "climate_data.csv"
 df_final.to_csv(output_path, index=False)
 
-print(f"✅ Success! Converted data saved to {output_path}")
+print(f"Success! Converted data saved to {output_path}")
 print(f"Columns included: {list(df_final.columns)}")
