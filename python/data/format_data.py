@@ -9,11 +9,8 @@ df = pd.read_csv("Greenhouse_climate.csv")
 # (If your CSV uses slightly different headers like 'T_air', adjust the left side of this list)
 rename_map = {
     'Tair': 'Temperature',
-    'Rhumid': 'Humidity',
+    'RHair': 'Humidity',
     'CO2air': 'CO2',
-    'Iglob': 'Radiation',
-    'Tout': 'outside_temperature',
-    'Rhout': 'outside_humidity'
 }
 
 # 3. Safely check which columns actually exist in your file 
