@@ -45,5 +45,15 @@ Saves
 - data/X_test.npy, y_test.npy - supervised learning arrays
 
   Output Example:
+  Checks inside the data folder
 
-  
+- You can generate a side-by-side plot to verify the injected hardware noise.
+
+Open the visualize_noise.py file.
+
+Change the column_to_plot variable if you want to visualize a different sensor (it is currently set to 'Temperature').
+
+Run the script:
+python visualize_noise.py
+
+This will generate and save a comparison plot image (e.g., temp_noise_visualization.png) directly inside your ./data folder. 
