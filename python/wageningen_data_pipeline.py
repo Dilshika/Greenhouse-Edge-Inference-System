@@ -113,7 +113,7 @@ def train_models(data_dir, models_dir):
         return
 
     # Load Data
-    X_train = np.load(os.path.join(data_dir, "X_tain.npy"))
+    X_train = np.load(os.path.join(data_dir, "X_train.npy"))
     y_train = np.load(os.path.join(data_dir,"y_train.npy"))
 
     # -- Train XGBoost --
@@ -129,7 +129,7 @@ def train_models(data_dir, models_dir):
     X_train_rnn = reshape_for_rnn(X_train, window=window_size)
 
     #Trim y_train to match the reshaped X_train_run length
-    y_train_rnn = y_train[:X_train_run.shape[0]]
+    y_train_rnn = y_train[:X_train_rnn.shape[0]]
 
     # -- Train GRU --
     print("\nTraining GRU ...")
@@ -140,7 +140,7 @@ def train_models(data_dir, models_dir):
 
     gru_model.compile(optimizer='adam', loss ='mse')
     gru_model.fit(X_train_rnn, y_train_rnn, epochs=20, batch_size=32, verbose=1)
-    gru_path = os.path.join(models_dir, "gru_model.h5")
+    gru_path = os.path.join(models_dir, "gru_model.keras")
     gru_model.save(gru_path)
     print(f"Saved GRU to {gru_path}")
 
@@ -152,7 +152,8 @@ def train_models(data_dir, models_dir):
     ])
     lstm_model.compile(optimizer="adam", loss="mse")
     lstm_model.fit(X_train_rnn, y_train_rnn, epochs=20, batch_size=32, verbose=1)
-    lstm_path = os.path.join(models_dir, "lstn_model.h5")
+    lstm_path = os.path.join(models_dir, "lstm_model.keras")
+    lstm_model.save(lstm_path)
     print(f"Saved LSTM to {lstm_path}")
 
 #Strem mode Functions

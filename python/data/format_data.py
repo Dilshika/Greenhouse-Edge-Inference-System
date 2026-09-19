@@ -9,11 +9,8 @@ df = pd.read_csv("Greenhouse_climate.csv")
 # (If your CSV uses slightly different headers like 'T_air', adjust the left side of this list)
 rename_map = {
     'Tair': 'Temperature',
-    'Rhumid': 'Humidity',
+    'RHair': 'Humidity',
     'CO2air': 'CO2',
-    'Iglob': 'Radiation',
-    'Tout': 'outside_temperature',
-    'Rhout': 'outside_humidity'
 }
 
 # 3. Safely check which columns actually exist in your file 
@@ -27,5 +24,5 @@ df_final = df[list(existing_cols.keys())].rename(columns=existing_cols)
 output_path = "climate_data.csv"
 df_final.to_csv(output_path, index=False)
 
-print(f"✅ Success! Converted data saved to {output_path}")
+print(f"Success! Converted data saved to {output_path}")
 print(f"Columns included: {list(df_final.columns)}")
