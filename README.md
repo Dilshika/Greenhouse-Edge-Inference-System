@@ -6,16 +6,20 @@ The system forecasts indoor air **temperature**, **relative humidity**, and **CO
 
 ![alt text](image.png)
 
+## Repository structure
+ 
+```
 Greenhouse-Edge-Inference-System/
-├── mosquitto_local.conf               # Local MQTT broker config (port 1883)
+├── mosquitto_local.conf            # Local MQTT broker config (port 1883)
 ├── python/
-│   ├── data/                          # Raw CSV, clean/noisy splits, and .npy arrays
-│   ├── models/                        # Saved artifacts: xgboost_model.json, gru_model.keras, lstm_model.keras
+│   ├── data/                       # Raw CSV, clean/noisy splits, and .npy arrays
+│   ├── models/                     # Saved artifacts: xgboost_model.json, gru_model.keras, lstm_model.keras
 │   ├── middleware/
-│   │   └── middleware.py              # Smart Edge Gateway (MQTT aggregation + live inference)
-│   ├── wageningen_data_pipeline.py    # CLI pipeline (--mode prepare | train | stream)
-│   ├── visualize_noise.py             # Clean vs. noisy sensor visualization script
-│   └── edge_benchmark.py              # Multi-criteria model evaluation (RMSE, MAE, CPU, RAM, latency)
-├── backend/                           # Python FastAPI REST + WebSocket server & MongoDB client
-├── dashboard/                         # React analytics & manual override frontend
-└── n8n-flows/                         # Telegram bot HITL alert & command workflows
+│   │   └── middleware.py           # Smart Edge Gateway (MQTT aggregation + live inference)
+│   ├── wageningen_data_pipeline.py # CLI pipeline (--mode prepare | train | stream)
+│   ├── visualize_noise.py          # Clean vs. noisy sensor visualization script
+│   └── edge_benchmark.py           # Multi-criteria model evaluation (RMSE, MAE, CPU, RAM, latency)
+├── backend/                        # FastAPI REST + WebSocket server & MongoDB client
+├── dashboard/                      # React analytics & manual override frontend
+└── n8n-flows/                      # Telegram bot HITL alert & command workflows
+```
