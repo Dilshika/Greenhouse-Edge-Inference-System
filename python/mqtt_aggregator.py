@@ -7,10 +7,7 @@ from datetime import datetime, timezone
 sensor_cache = {
     "temperature": None,
     "humidity": None,
-    "co2": None,
-    "radiation": None,
-    "outside_temperature": None,
-    "outside_humidity": None
+    "co2": None
 }
 
 # 2. THE LISTENER: Runs automatically whenever a message arrives
@@ -30,7 +27,7 @@ def on_message(client, userdata, msg):
             print(f"Received {sensor_name}: {value}")
             
     except ValueError:
-        print(f"⚠️ Could not parse value from {msg.topic}")
+        print(f"Could not parse value from {msg.topic}")
 
 # 3. SETUP MQTT
 broker = "localhost"
