@@ -176,7 +176,7 @@ def stream_data(data_dir, broker, port, topic, interval):
     print(f"Loaded {len(df)} rows from test set for streaming.")
 
     #Setup MQTT Client
-    client = mqtt.Client()
+    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     try:
         client.connect(broker, port, 60)
         print(f"Conencted to MQTT broker at {broker}:{port}")
@@ -195,19 +195,13 @@ def stream_data(data_dir, broker, port, topic, interval):
             temp = round(row['Temperature'] + np.random.normal(0, 0.1), 2)
             hum = round(row['Humidity'] + np.random.normal(0, 0.5), 1)
             co2 = round(row['CO2'] + np.random.normal(0, 2.0), 1)
-            rad = round(row['Radiation'] + np.random.normal(0, 5.0), 1)
-            out_temp = round(row['outside_temperature'], 2)
-            out_hum = round(row['outside_humidity'], 1)
             
             # Publish each sensor individually to its own topic
             client.publish(f"{topic}/temperature", temp)
             client.publish(f"{topic}/humidity", hum)
             client.publish(f"{topic}/co2", co2)
-            client.publish(f"{topic}/radiation", rad)
-            client.publish(f"{topic}/outside_temperature", out_temp)
-            client.publish(f"{topic}/outside_humidity", out_hum)
             
-            print(f"[{idx}] Published 6 independent sensor readings.")
+            print(f"[{idx}] Published 3 independent sensor readings.")
             
             time.sleep(interval)
 
