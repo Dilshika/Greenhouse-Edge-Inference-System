@@ -1,12 +1,10 @@
 # Wageningen Dataset Pipeline 
 
-### This pipeline has three modes
+### This pipeline has two modes
 
 1. Prepare - Download Wageningen dataset, clean it, add sensor noise, split 70/30 into train/test
 
 2. Train - Train XGBoost, GRU,LSTM models on the preparef training data
-
-3. Stream - Simulate the real-time sensor telemetry over MQTT using the test dataset
 
 
 ## Installation
@@ -51,9 +49,11 @@ Saves
 
 Open the visualize_noise.py file.
 
-Change the column_to_plot variable if you want to visualize a different sensor (it is currently set to 'Temperature').
+Change the column_to_plot variable if you want to visualize a different sensor.
 
 Run the script:
 python visualize_noise.py
 
 This will generate and save a comparison plot image (e.g., temp_noise_visualization.png) directly inside your ./data folder. 
+
+![alt text](image.png)
