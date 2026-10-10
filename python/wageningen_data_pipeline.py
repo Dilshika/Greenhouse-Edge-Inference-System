@@ -15,25 +15,25 @@ HORIZON = 3
 
 ## Prepare rge mode functions
 # adding the sensor noise
-def add_sensor_noise(series, std_multiplier=0.03,drift_factor=0.0005,spike_prob=0.01):
-    std_dev = series.std()
-    if pd.isna(std_dev) or std_dev == 0:
-        std_dev = 1.0
+#def add_sensor_noise(series, std_multiplier=0.03,drift_factor=0.0005,spike_prob=0.01):
+#    std_dev = series.std()
+#    if pd.isna(std_dev) or std_dev == 0:
+#        std_dev = 1.0
 
     # Gaussian noise (2-5% of signal std)
-    noise = np.random.normal(0, std_dev * std_multiplier, len(series))
+#    noise = np.random.normal(0, std_dev * std_multiplier, len(series))
 
     #Gradual noise (2-5% of signal std)
-    drift = np.linspace(0, std_dev * drift_factor * len(series), len(series))
+#    drift = np.linspace(0, std_dev * drift_factor * len(series), len(series))
 
-    # 1% Occasional hardware spikes/glitches
-    spikes = np.where(
-        np.random.rand(len(series)) < spike_prob,
-        std_dev * 5 * np.random.choice([-1,1],len(series)),
-        0
-    )
+#    # 1% Occasional hardware spikes/glitches
+#    spikes = np.where(
+#        np.random.rand(len(series)) < spike_prob,
+#        std_dev * 5 * np.random.choice([-1,1],len(series)),
+#        0
+#    )
 
-    return series + noise + drift + spikes
+#   return series + noise + drift + spikes
 
 ## Prepare the data
 def prepare_data(data_dir):
@@ -63,36 +63,36 @@ def prepare_data(data_dir):
 
     # 70/30 Chronological Split
     split_index = int(len(df) * 0.7)
-    train_clean_df = df.iloc[:split_index].copy()
-    test_clean_df = df.iloc[split_index:].copy()
+    train_df = df.iloc[:split_index].copy()
+    test_df = df.iloc[split_index:].copy()
 
     # Save the Clean versions
-    train_clean_df.to_csv(os.path.join(data_dir, "train_clean.csv"), index=False)
-    test_clean_df.to_csv(os.path.join(data_dir,"test_clean.csv"),index=False)
+    train_df.to_csv(os.path.join(data_dir, "train.csv"), index=False)
+    test_df.to_csv(os.path.join(data_dir,"test.csv"),index=False)
 
-    print("Saved pristine datasets: 'train_clean.csv' and 'test_clean.csv' ")
+    print("Saved pristine datasets: 'train.csv' and 'test.csv' ")
 
     #Prepare noisy versions
-    train_noisy_df = train_clean_df.copy()
-    test_noisy_df = test_clean_df.copy()
+    train_noisy_df = train_df.copy()
+    test_noisy_df = test_df.copy()
 
-    for col in df.columns:
-        train_noisy_df[col] = add_sensor_noise(train_noisy_df[col])
-        test_noisy_df[col] = add_sensor_noise(test_noisy_df[col])
+    #for col in df.columns:
+        #train_noisy_df[col] = add_sensor_noise(train_noisy_df[col])
+        #test_noisy_df[col] = add_sensor_noise(test_noisy_df[col])
 
     # Save the noisy versions
-    train_noisy_df.to_csv(os.path.join(data_dir, "train_noisy.csv"), index=False)
-    test_noisy_df.to_csv(os.path.join(data_dir, "test_noisy.csv"), index=False)
-    print("Applied sensor noise and saved: 'train_noisy.csv' and 'test_noisy.csv' ")
+    #train_noisy_df.to_csv(os.path.join(data_dir, "train_noisy.csv"), index=False)
+    #test_noisy_df.to_csv(os.path.join(data_dir, "test_noisy.csv"), index=False)
+    #print("Applied sensor noise and saved: 'train_noisy.csv' and 'test_noisy.csv' ")
 
     # --- CREATE SUPERVISED ARRAYS ---
     # Inputs (X) = Noisy sensor readings at time t
     # Targets (y) = Clean REAL ground truth [Temperature, Humidity, CO2] at time t + HORIZON
-    X_train = train_noisy_df.iloc[:-HORIZON].values
-    y_train = train_clean_df[TARGET_VARS].iloc[HORIZON:].values
+    X_train = train_df.iloc[:-HORIZON].values
+    y_train = train_df[TARGET_VARS].iloc[HORIZON:].values
 
-    X_test = test_noisy_df.iloc[:-HORIZON].values
-    y_test = test_clean_df[TARGET_VARS].iloc[HORIZON:].values
+    X_test = test_df.iloc[:-HORIZON].values
+    y_test = test_df[TARGET_VARS].iloc[HORIZON:].values
 
     np.save(os.path.join(data_dir, "X_train.npy"), X_train)
     np.save(os.path.join(data_dir, "y_train.npy"), y_train)
