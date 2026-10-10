@@ -2,7 +2,7 @@
 
 ### This pipeline has two modes
 
-1. Prepare - Download Wageningen dataset, clean it, add sensor noise, split 70/30 into train/test
+1. Prepare - Download Wageningen dataset, split 70/30 into train/test
 
 2. Train - Train XGBoost, GRU,LSTM models on the preparef training data
 
@@ -37,8 +37,8 @@ Splits 70% training / 30% testing
 
 Saves
 
-- data/train_clean.csv - raw training data
-- data/test_clean.csv - raw testing data (for MQTT streaming)
+- data/train.csv - raw training data
+- data/test.csv - raw testing data (for MQTT streaming)
 - data/X_train.npy, y_train.npy - supervised learning arrays
 - data/X_test.npy, y_test.npy - supervised learning arrays
 
