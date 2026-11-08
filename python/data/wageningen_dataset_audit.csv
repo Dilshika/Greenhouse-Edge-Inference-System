@@ -1,0 +1,13 @@
+Edition,Compartment,Records,Date range,Typical interval,Missing temperature,Missing humidity,Missing CO₂
+First Edition,coperators,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+First Edition,igrow,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+First Edition,growers,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+First Edition,deep_greens,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+First Edition,sonoma,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+First Edition,aicu,33133,2018-08-14 to 2018-12-07,4 min,0.4%,0.4%,0.4%
+Second Edition,digilog,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
+Second Edition,auromatoes,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
+Second Edition,iucaas,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
+Second Edition,aicu,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
+Second Edition,reference,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
+Second Edition,automators,47809,2019-12-16 to 2020-05-30,4 min,0.0%,0.0%,0.0%
