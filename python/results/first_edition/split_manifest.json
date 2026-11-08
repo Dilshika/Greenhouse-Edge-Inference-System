@@ -1,0 +1,110 @@
+{
+  "input_file": "/Users/dilshika/Desktop/Research/Greenhouse-Edge-Inference-System/python/data/first_edition/prepared/first_edition_data.csv",
+  "timestamp_column": "Timestamp",
+  "compartment_column": "Compartment",
+  "timestamp_mode": "excel",
+  "date_format": null,
+  "split_basis": "Ordered unique timestamps; common calendar boundaries across compartments",
+  "development_ratio_requested": 0.7,
+  "validation_fraction_of_development": 0.2,
+  "validation_start": "2018-10-17T10:19:59.999995",
+  "test_start": "2018-11-02T14:39:59.999999",
+  "expected_interval_minutes": 5.0,
+  "interval_audit": {
+    "aicu": {
+      "rows": 32989,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32988
+    },
+    "coperators": {
+      "rows": 32990,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32989
+    },
+    "deep_greens": {
+      "rows": 32989,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32988
+    },
+    "growers": {
+      "rows": 32989,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32988
+    },
+    "igrow": {
+      "rows": 32989,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32988
+    },
+    "sonoma": {
+      "rows": 32989,
+      "median_interval_minutes": 4.999999966666667,
+      "intervals_not_matching_expected": 32988
+    }
+  },
+  "partitions": {
+    "development": {
+      "rows": 138553,
+      "unique_timestamps": 23093,
+      "first_timestamp": "2018-08-14T00:10:00.000005",
+      "last_timestamp": "2018-11-02T14:35:00.000001",
+      "rows_per_compartment": {
+        "aicu": 23092,
+        "coperators": 23093,
+        "deep_greens": 23092,
+        "growers": 23092,
+        "igrow": 23092,
+        "sonoma": 23092
+      }
+    },
+    "fit": {
+      "rows": 110839,
+      "unique_timestamps": 18474,
+      "first_timestamp": "2018-08-14T00:10:00.000005",
+      "last_timestamp": "2018-10-17T10:15:00.000006",
+      "rows_per_compartment": {
+        "aicu": 18473,
+        "coperators": 18474,
+        "deep_greens": 18473,
+        "growers": 18473,
+        "igrow": 18473,
+        "sonoma": 18473
+      }
+    },
+    "validation": {
+      "rows": 27714,
+      "unique_timestamps": 4619,
+      "first_timestamp": "2018-10-17T10:19:59.999995",
+      "last_timestamp": "2018-11-02T14:35:00.000001",
+      "rows_per_compartment": {
+        "aicu": 4619,
+        "coperators": 4619,
+        "deep_greens": 4619,
+        "growers": 4619,
+        "igrow": 4619,
+        "sonoma": 4619
+      }
+    },
+    "test": {
+      "rows": 59382,
+      "unique_timestamps": 9897,
+      "first_timestamp": "2018-11-02T14:39:59.999999",
+      "last_timestamp": "2018-12-07T00:55:00.000005",
+      "rows_per_compartment": {
+        "aicu": 9897,
+        "coperators": 9897,
+        "deep_greens": 9897,
+        "growers": 9897,
+        "igrow": 9897,
+        "sonoma": 9897
+      }
+    }
+  },
+  "notes": [
+    "All original columns are retained.",
+    "Missing sensor values are not dropped or imputed.",
+    "No scaling or synthetic noise is applied.",
+    "Window partitioning must respect future target timestamps.",
+    "File creation does not establish regular time spacing."
+  ]
+}

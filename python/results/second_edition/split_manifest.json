@@ -1,0 +1,110 @@
+{
+  "input_file": "/Users/dilshika/Desktop/Research/Greenhouse-Edge-Inference-System/python/data/second_edition/prepared/second_edition_data.csv",
+  "timestamp_column": "Timestamp",
+  "compartment_column": "Compartment",
+  "timestamp_mode": "excel",
+  "date_format": null,
+  "split_basis": "Ordered unique timestamps; common calendar boundaries across compartments",
+  "development_ratio_requested": 0.7,
+  "validation_fraction_of_development": 0.2,
+  "validation_start": "2020-03-17T22:59:59.712000",
+  "test_start": "2020-04-10T04:50:00.096000",
+  "expected_interval_minutes": 5.0,
+  "interval_audit": {
+    "aicu": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    },
+    "auromatoes": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    },
+    "automators": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    },
+    "digilog": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    },
+    "iucaas": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    },
+    "reference": {
+      "rows": 47809,
+      "median_interval_minutes": 4.9967999999999995,
+      "intervals_not_matching_expected": 47808
+    }
+  },
+  "partitions": {
+    "development": {
+      "rows": 200796,
+      "unique_timestamps": 33466,
+      "first_timestamp": "2019-12-16T00:00:00",
+      "last_timestamp": "2020-04-10T04:45:00.288000",
+      "rows_per_compartment": {
+        "aicu": 33466,
+        "auromatoes": 33466,
+        "automators": 33466,
+        "digilog": 33466,
+        "iucaas": 33466,
+        "reference": 33466
+      }
+    },
+    "fit": {
+      "rows": 160632,
+      "unique_timestamps": 26772,
+      "first_timestamp": "2019-12-16T00:00:00",
+      "last_timestamp": "2020-03-17T22:54:59.904000",
+      "rows_per_compartment": {
+        "aicu": 26772,
+        "auromatoes": 26772,
+        "automators": 26772,
+        "digilog": 26772,
+        "iucaas": 26772,
+        "reference": 26772
+      }
+    },
+    "validation": {
+      "rows": 40164,
+      "unique_timestamps": 6694,
+      "first_timestamp": "2020-03-17T22:59:59.712000",
+      "last_timestamp": "2020-04-10T04:45:00.288000",
+      "rows_per_compartment": {
+        "aicu": 6694,
+        "auromatoes": 6694,
+        "automators": 6694,
+        "digilog": 6694,
+        "iucaas": 6694,
+        "reference": 6694
+      }
+    },
+    "test": {
+      "rows": 86058,
+      "unique_timestamps": 14343,
+      "first_timestamp": "2020-04-10T04:50:00.096000",
+      "last_timestamp": "2020-05-30T00:00:00",
+      "rows_per_compartment": {
+        "aicu": 14343,
+        "auromatoes": 14343,
+        "automators": 14343,
+        "digilog": 14343,
+        "iucaas": 14343,
+        "reference": 14343
+      }
+    }
+  },
+  "notes": [
+    "All original columns are retained.",
+    "Missing sensor values are not dropped or imputed.",
+    "No scaling or synthetic noise is applied.",
+    "Window partitioning must respect future target timestamps.",
+    "File creation does not establish regular time spacing."
+  ]
+}
