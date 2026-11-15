@@ -1,0 +1,31 @@
+{
+  "input": "/Users/dilshika/Desktop/Research/Greenhouse-Edge-Inference-System/python/data/second_edition/prepared/second_edition_data.csv",
+  "input_sha256": "f1d26f91a5380d3e20a3978b1f7e99120eca615ba0abda18f49d5ed603f8f57d",
+  "pandas_version": "3.0.5",
+  "sklearn_version": "1.9.1",
+  "timestamp_column": "Timestamp",
+  "compartment_column": "Compartment",
+  "compartments": [
+    "aicu",
+    "auromatoes",
+    "automators",
+    "digilog",
+    "iucaas",
+    "reference"
+  ],
+  "outer_folds": 6,
+  "development_fraction_of_calendar_grid": 0.7,
+  "test_start": "2020-04-10T04:50:00",
+  "interval_minutes": 5.0,
+  "inner_splits": 3,
+  "gap_steps": 0,
+  "notes": [
+    "Raw observation partitions only: no model-ready windows are generated.",
+    "All measurements and existing quality flags retained; no imputation, scaling or synthetic faults.",
+    "Regular calendar grid defines boundaries; missing observations are not filled.",
+    "Construct windows per compartment and within continuous segments; targets must remain within their partition.",
+    "Fit preprocessing only on each inner fit set; refit on outer development after tuning.",
+    "Never tune or calibrate quantization on any final-test records or excluded-compartment observations.",
+    "test_all.csv is duplicated across outer folds; do not treat repeated predictions as independent tests."
+  ]
+}

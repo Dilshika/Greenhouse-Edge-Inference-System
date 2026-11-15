@@ -1,0 +1,7 @@
+Edition,Compartment,Records,Temperature_missing,Temperature_suspected_flatline,Humidity_missing,Humidity_suspected_flatline,CO2_missing,CO2_suspected_flatline
+2,aicu,47809,71,456,71,772,71,2
+2,auromatoes,47809,71,27,71,92,71,3
+2,automators,47809,71,32,71,151,71,1
+2,digilog,47809,71,243,71,232,71,0
+2,iucaas,47809,71,59,71,278,71,0
+2,reference,47809,71,36,71,77,71,3

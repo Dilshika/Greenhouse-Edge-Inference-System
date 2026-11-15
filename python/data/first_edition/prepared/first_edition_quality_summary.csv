@@ -1,0 +1,7 @@
+Edition,Compartment,Records,Temperature_missing,Temperature_suspected_flatline,Humidity_missing,Humidity_suspected_flatline,CO2_missing,CO2_suspected_flatline
+1,aicu,33133,142,27,143,58,142,0
+1,coperators,33133,142,101,142,48,142,13
+1,deep_greens,33133,142,159,143,4,142,0
+1,growers,33133,142,16,143,11,142,0
+1,igrow,33133,142,60,143,15,142,0
+1,sonoma,33133,142,134,143,22,142,13
