@@ -1,0 +1,35 @@
+{
+  "outer_fold": 6,
+  "held_out_compartment": "reference",
+  "development_compartments": [
+    "aicu",
+    "auromatoes",
+    "automators",
+    "digilog",
+    "iucaas"
+  ],
+  "test_start": "2020-04-10T04:50:00",
+  "inner_splits": [
+    {
+      "inner_fold": 1,
+      "fit_start": "2019-12-16T00:00:00",
+      "fit_end": "2020-01-14T01:15:00",
+      "validation_start": "2020-01-14T01:20:00",
+      "validation_end": "2020-02-12T02:25:00"
+    },
+    {
+      "inner_fold": 2,
+      "fit_start": "2019-12-16T00:00:00",
+      "fit_end": "2020-02-12T02:25:00",
+      "validation_start": "2020-02-12T02:30:00",
+      "validation_end": "2020-03-12T03:35:00"
+    },
+    {
+      "inner_fold": 3,
+      "fit_start": "2019-12-16T00:00:00",
+      "fit_end": "2020-03-12T03:35:00",
+      "validation_start": "2020-03-12T03:40:00",
+      "validation_end": "2020-04-10T04:45:00"
+    }
+  ]
+}
