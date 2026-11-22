@@ -1,0 +1,71 @@
+{
+  "model_name": "gru",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 86321,
+    "validation": 28605,
+    "test": 49480
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 86915,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 594,
+      "accepted_windows": 86321
+    },
+    "validation": {
+      "candidate_windows": 28930,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 325,
+      "accepted_windows": 28605
+    },
+    "test": {
+      "candidate_windows": 49640,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 160,
+      "accepted_windows": 49480
+    }
+  },
+  "epochs_completed": 40,
+  "best_validation_loss": 0.05072479695081711,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.1712305247783661,
+      "rmse": 0.2461859590865191,
+      "r2": 0.987945020198822,
+      "persistence_mae": 0.15868431329727173,
+      "persistence_rmse": 0.245771636265597,
+      "improvement_over_persistence_mae": -0.01254621148109436,
+      "improvement_over_persistence_rmse": -0.0004143228209221028
+    },
+    "Humidity": {
+      "mae": 0.790260910987854,
+      "rmse": 1.18808822117388,
+      "r2": 0.9844972491264343,
+      "persistence_mae": 0.7289571166038513,
+      "persistence_rmse": 1.1578530720180047,
+      "improvement_over_persistence_mae": -0.061303794384002686,
+      "improvement_over_persistence_rmse": -0.03023514915587522
+    },
+    "CO2": {
+      "mae": 33.55292892456055,
+      "rmse": 47.8144071310821,
+      "r2": 0.9069350361824036,
+      "persistence_mae": 36.278961181640625,
+      "persistence_rmse": 50.87821511646709,
+      "improvement_over_persistence_mae": 2.726032257080078,
+      "improvement_over_persistence_rmse": 3.06380798538499
+    }
+  }
+}
