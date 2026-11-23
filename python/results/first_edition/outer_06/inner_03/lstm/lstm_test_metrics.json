@@ -1,0 +1,71 @@
+{
+  "model_name": "lstm",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 86321,
+    "validation": 28605,
+    "test": 49480
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 86915,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 594,
+      "accepted_windows": 86321
+    },
+    "validation": {
+      "candidate_windows": 28930,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 325,
+      "accepted_windows": 28605
+    },
+    "test": {
+      "candidate_windows": 49640,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 160,
+      "accepted_windows": 49480
+    }
+  },
+  "epochs_completed": 46,
+  "best_validation_loss": 0.0643424540758133,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.18216156959533691,
+      "rmse": 0.2558517018106701,
+      "r2": 0.9898760318756104,
+      "persistence_mae": 0.15835286676883698,
+      "persistence_rmse": 0.23726943425300753,
+      "improvement_over_persistence_mae": -0.02380870282649994,
+      "improvement_over_persistence_rmse": -0.01858226755766254
+    },
+    "Humidity": {
+      "mae": 0.8233219385147095,
+      "rmse": 1.2300289276256964,
+      "r2": 0.984514057636261,
+      "persistence_mae": 0.7184154391288757,
+      "persistence_rmse": 1.1365290217992534,
+      "improvement_over_persistence_mae": -0.10490649938583374,
+      "improvement_over_persistence_rmse": -0.09349990582644296
+    },
+    "CO2": {
+      "mae": 32.279457092285156,
+      "rmse": 46.48055656585746,
+      "r2": 0.9101883172988892,
+      "persistence_mae": 33.51760482788086,
+      "persistence_rmse": 47.80598147966816,
+      "improvement_over_persistence_mae": 1.2381477355957031,
+      "improvement_over_persistence_rmse": 1.3254249138107
+    }
+  }
+}

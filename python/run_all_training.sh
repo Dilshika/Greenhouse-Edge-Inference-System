@@ -9,11 +9,11 @@ for outer in {1..6}; do
         OUTER=$(printf "%02d" $outer)
         INNER=$(printf "%02d" $inner)
 
-        TRAIN="data/second_edition/rotating_splits/outer_${OUTER}/inner_${INNER}/fit.csv"
-        VALIDATION="data/second_edition/rotating_splits/outer_${OUTER}/inner_${INNER}/validation.csv"
-        TEST="data/second_edition/rotating_splits/outer_${OUTER}/test_seen.csv"
+        TRAIN="data/first_edition/rotating_splits/outer_${OUTER}/inner_${INNER}/fit.csv"
+        VALIDATION="data/first_edition/rotating_splits/outer_${OUTER}/inner_${INNER}/validation.csv"
+        TEST="data/first_edition/rotating_splits/outer_${OUTER}/test_seen.csv"
 
-        OUTPUT="results/second_edition/outer_${OUTER}/inner_${INNER}"
+        OUTPUT="results/first_edition/outer_${OUTER}/inner_${INNER}"
 
         echo "======================================"
         echo "Running Outer ${OUTER} - Inner ${INNER}"
