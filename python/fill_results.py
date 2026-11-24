@@ -87,7 +87,13 @@ def main():
                 with open(json_path, "r") as f:
                     data = json.load(f)
 
-                for target, metrics in data.get("test_metrics", {}).items():
+                test_metrics = (
+                    data.get("test_metrics")
+                    or data.get("floating_point_test_metrics")
+                    or {}
+                )
+
+                for target, metrics in test_metrics.items():
                     key = (
                         args.edition,
                         f"Outer {outer_id}",
