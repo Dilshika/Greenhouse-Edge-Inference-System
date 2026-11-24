@@ -1,0 +1,67 @@
+{
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 4,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": 42
+  },
+  "window_counts": {
+    "train": 57330,
+    "validation": 28930,
+    "test": 49480
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 57925,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 595,
+      "accepted_windows": 57330
+    },
+    "validation": {
+      "candidate_windows": 28930,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 28930
+    },
+    "test": {
+      "candidate_windows": 49640,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 160,
+      "accepted_windows": 49480
+    }
+  },
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.1957358866930008,
+      "rmse": 0.34885418699501203,
+      "r2": 0.9823945164680481,
+      "persistence_mae": 0.15384599566459656,
+      "persistence_rmse": 0.23698541175382606,
+      "improvement_over_persistence_mae": -0.041889891028404236,
+      "improvement_over_persistence_rmse": -0.11186877524118596
+    },
+    "Humidity": {
+      "mae": 0.747452437877655,
+      "rmse": 1.1443549531423514,
+      "r2": 0.9854671955108643,
+      "persistence_mae": 0.6270512342453003,
+      "persistence_rmse": 1.0121409003097213,
+      "improvement_over_persistence_mae": -0.12040120363235474,
+      "improvement_over_persistence_rmse": -0.1322140528326301
+    },
+    "CO2": {
+      "mae": 30.09331512451172,
+      "rmse": 45.441465181181165,
+      "r2": 0.9255779981613159,
+      "persistence_mae": 31.380395889282227,
+      "persistence_rmse": 46.50762811256074,
+      "improvement_over_persistence_mae": 1.2870807647705078,
+      "improvement_over_persistence_rmse": 1.0661629313795729
+    }
+  }
+}

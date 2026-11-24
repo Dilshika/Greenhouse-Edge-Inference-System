@@ -1,0 +1,76 @@
+{
+  "model_name": "tinyml_mlp",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "hidden_units_1": 32,
+    "hidden_units_2": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 83610,
+    "validation": 41340,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 83610,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 83610
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 430,
+      "accepted_windows": 41340
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 77,
+  "best_validation_loss": 0.025066277012228966,
+  "tflite_conversion": {
+    "quantisation": "dynamic_range",
+    "calibration_samples_used": 0,
+    "model_size_bytes": 7112
+  },
+  "floating_point_test_metrics": {
+    "Temperature": {
+      "mae": 0.4021250307559967,
+      "rmse": 0.6590129952357793,
+      "r2": 0.9737732410430908,
+      "persistence_mae": 0.2571179270744324,
+      "persistence_rmse": 0.4095746958311132,
+      "improvement_over_persistence_mae": -0.14500710368156433,
+      "improvement_over_persistence_rmse": -0.24943829940466605
+    },
+    "Humidity": {
+      "mae": 1.395329475402832,
+      "rmse": 2.554475548027417,
+      "r2": 0.9612293839454651,
+      "persistence_mae": 1.240890383720398,
+      "persistence_rmse": 2.256275643918879,
+      "improvement_over_persistence_mae": -0.15443909168243408,
+      "improvement_over_persistence_rmse": -0.2981999041085377
+    },
+    "CO2": {
+      "mae": 25.692989349365234,
+      "rmse": 40.11919192290487,
+      "r2": 0.9488965272903442,
+      "persistence_mae": 22.917781829833984,
+      "persistence_rmse": 35.93242151616872,
+      "improvement_over_persistence_mae": -2.77520751953125,
+      "improvement_over_persistence_rmse": -4.186770406736144
+    }
+  }
+}

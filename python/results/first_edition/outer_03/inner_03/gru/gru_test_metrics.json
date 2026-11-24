@@ -1,0 +1,71 @@
+{
+  "model_name": "gru",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 86321,
+    "validation": 28605,
+    "test": 49480
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 86915,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 594,
+      "accepted_windows": 86321
+    },
+    "validation": {
+      "candidate_windows": 28930,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 325,
+      "accepted_windows": 28605
+    },
+    "test": {
+      "candidate_windows": 49640,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 160,
+      "accepted_windows": 49480
+    }
+  },
+  "epochs_completed": 33,
+  "best_validation_loss": 0.05731067433953285,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.16969256103038788,
+      "rmse": 0.24023817416032547,
+      "r2": 0.9911800622940063,
+      "persistence_mae": 0.1572776883840561,
+      "persistence_rmse": 0.23987563415232807,
+      "improvement_over_persistence_mae": -0.012414872646331787,
+      "improvement_over_persistence_rmse": -0.0003625400079974028
+    },
+    "Humidity": {
+      "mae": 0.7991312146186829,
+      "rmse": 1.2386320080652722,
+      "r2": 0.9633514285087585,
+      "persistence_mae": 0.6812812685966492,
+      "persistence_rmse": 1.1158527323484995,
+      "improvement_over_persistence_mae": -0.11784994602203369,
+      "improvement_over_persistence_rmse": -0.12277927571677272
+    },
+    "CO2": {
+      "mae": 31.84648895263672,
+      "rmse": 46.06619674361966,
+      "r2": 0.9293968081474304,
+      "persistence_mae": 33.2512321472168,
+      "persistence_rmse": 48.129781113964405,
+      "improvement_over_persistence_mae": 1.4047431945800781,
+      "improvement_over_persistence_rmse": 2.063584370344742
+    }
+  }
+}
