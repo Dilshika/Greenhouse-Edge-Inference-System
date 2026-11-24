@@ -1,0 +1,71 @@
+{
+  "model_name": "lstm",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 125010,
+    "validation": 41500,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 125440,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 430,
+      "accepted_windows": 125010
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 270,
+      "accepted_windows": 41500
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 32,
+  "best_validation_loss": 0.04398540034890175,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.30630457401275635,
+      "rmse": 0.5205421937391077,
+      "r2": 0.9858765006065369,
+      "persistence_mae": 0.25310954451560974,
+      "persistence_rmse": 0.3975066924881304,
+      "improvement_over_persistence_mae": -0.053195029497146606,
+      "improvement_over_persistence_rmse": -0.12303550125097729
+    },
+    "Humidity": {
+      "mae": 1.2816276550292969,
+      "rmse": 2.3040557512717137,
+      "r2": 0.9683372378349304,
+      "persistence_mae": 1.1370328664779663,
+      "persistence_rmse": 2.085248054550136,
+      "improvement_over_persistence_mae": -0.14459478855133057,
+      "improvement_over_persistence_rmse": -0.21880769672157774
+    },
+    "CO2": {
+      "mae": 25.529592514038086,
+      "rmse": 39.50948635098601,
+      "r2": 0.9505664706230164,
+      "persistence_mae": 23.799650192260742,
+      "persistence_rmse": 37.84812855295407,
+      "improvement_over_persistence_mae": -1.7299423217773438,
+      "improvement_over_persistence_rmse": -1.6613577980319363
+    }
+  }
+}

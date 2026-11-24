@@ -1,0 +1,71 @@
+{
+  "model_name": "gru",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 41780,
+    "validation": 41770,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 41780,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 41780
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 41770
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 16,
+  "best_validation_loss": 0.04809063673019409,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.3383600413799286,
+      "rmse": 0.5432544478046963,
+      "r2": 0.982177734375,
+      "persistence_mae": 0.2571179270744324,
+      "persistence_rmse": 0.4095746958311132,
+      "improvement_over_persistence_mae": -0.08124211430549622,
+      "improvement_over_persistence_rmse": -0.13367975197358312
+    },
+    "Humidity": {
+      "mae": 1.3269548416137695,
+      "rmse": 2.364857247461843,
+      "r2": 0.9667716026306152,
+      "persistence_mae": 1.240890383720398,
+      "persistence_rmse": 2.256275643918879,
+      "improvement_over_persistence_mae": -0.08606445789337158,
+      "improvement_over_persistence_rmse": -0.10858160354296365
+    },
+    "CO2": {
+      "mae": 29.098201751708984,
+      "rmse": 45.19405721571352,
+      "r2": 0.935150146484375,
+      "persistence_mae": 22.917781829833984,
+      "persistence_rmse": 35.93242151616872,
+      "improvement_over_persistence_mae": -6.180419921875,
+      "improvement_over_persistence_rmse": -9.261635699544797
+    }
+  }
+}

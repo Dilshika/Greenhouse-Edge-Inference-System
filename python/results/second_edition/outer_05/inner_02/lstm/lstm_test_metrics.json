@@ -1,0 +1,71 @@
+{
+  "model_name": "lstm",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 83610,
+    "validation": 41340,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 83610,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 83610
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 430,
+      "accepted_windows": 41340
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 44,
+  "best_validation_loss": 0.03112882189452648,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.3299837112426758,
+      "rmse": 0.5559159497377606,
+      "r2": 0.9828783869743347,
+      "persistence_mae": 0.24576690793037415,
+      "persistence_rmse": 0.38224479854006244,
+      "improvement_over_persistence_mae": -0.08421680331230164,
+      "improvement_over_persistence_rmse": -0.17367115119769816
+    },
+    "Humidity": {
+      "mae": 1.7340339422225952,
+      "rmse": 3.685272319778126,
+      "r2": 0.9174431562423706,
+      "persistence_mae": 1.1581059694290161,
+      "persistence_rmse": 2.083779694105909,
+      "improvement_over_persistence_mae": -0.5759279727935791,
+      "improvement_over_persistence_rmse": -1.601492625672217
+    },
+    "CO2": {
+      "mae": 30.206106185913086,
+      "rmse": 44.79595258685836,
+      "r2": 0.9372727274894714,
+      "persistence_mae": 24.29688835144043,
+      "persistence_rmse": 38.28185745691505,
+      "improvement_over_persistence_mae": -5.909217834472656,
+      "improvement_over_persistence_rmse": -6.514095129943314
+    }
+  }
+}

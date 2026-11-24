@@ -1,0 +1,71 @@
+{
+  "model_name": "lstm",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 41780,
+    "validation": 41770,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 41780,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 41780
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 41770
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 17,
+  "best_validation_loss": 0.040815576910972595,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.4191927909851074,
+      "rmse": 0.763800451669512,
+      "r2": 0.9717576503753662,
+      "persistence_mae": 0.26085275411605835,
+      "persistence_rmse": 0.4130087886399366,
+      "improvement_over_persistence_mae": -0.15834003686904907,
+      "improvement_over_persistence_rmse": -0.35079166302957543
+    },
+    "Humidity": {
+      "mae": 1.2911027669906616,
+      "rmse": 2.287610319218554,
+      "r2": 0.9639614820480347,
+      "persistence_mae": 1.2492992877960205,
+      "persistence_rmse": 2.289159258467226,
+      "improvement_over_persistence_mae": -0.04180347919464111,
+      "improvement_over_persistence_rmse": 0.0015489392486718323
+    },
+    "CO2": {
+      "mae": 33.0206184387207,
+      "rmse": 48.97261122699733,
+      "r2": 0.9241844415664673,
+      "persistence_mae": 23.18915557861328,
+      "persistence_rmse": 37.58165426514229,
+      "improvement_over_persistence_mae": -9.831462860107422,
+      "improvement_over_persistence_rmse": -11.39095696185504
+    }
+  }
+}

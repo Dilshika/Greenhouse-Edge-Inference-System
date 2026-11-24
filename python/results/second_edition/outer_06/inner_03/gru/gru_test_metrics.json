@@ -1,0 +1,71 @@
+{
+  "model_name": "gru",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 125010,
+    "validation": 41500,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 125440,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 430,
+      "accepted_windows": 125010
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 270,
+      "accepted_windows": 41500
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 34,
+  "best_validation_loss": 0.04663114249706268,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.4297614097595215,
+      "rmse": 0.8208097494839287,
+      "r2": 0.9673843383789062,
+      "persistence_mae": 0.26085275411605835,
+      "persistence_rmse": 0.4130087886399366,
+      "improvement_over_persistence_mae": -0.16890865564346313,
+      "improvement_over_persistence_rmse": -0.4078009608439921
+    },
+    "Humidity": {
+      "mae": 1.3875895738601685,
+      "rmse": 2.4401887589281324,
+      "r2": 0.9589937925338745,
+      "persistence_mae": 1.2492992877960205,
+      "persistence_rmse": 2.289159258467226,
+      "improvement_over_persistence_mae": -0.13829028606414795,
+      "improvement_over_persistence_rmse": -0.15102950046090635
+    },
+    "CO2": {
+      "mae": 26.00515365600586,
+      "rmse": 40.06766889675905,
+      "r2": 0.9492495656013489,
+      "persistence_mae": 23.18915557861328,
+      "persistence_rmse": 37.58165426514229,
+      "improvement_over_persistence_mae": -2.815998077392578,
+      "improvement_over_persistence_rmse": -2.4860146316167615
+    }
+  }
+}

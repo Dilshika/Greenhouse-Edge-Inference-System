@@ -1,0 +1,71 @@
+{
+  "model_name": "lstm",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 86321,
+    "validation": 28605,
+    "test": 49480
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 86915,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 594,
+      "accepted_windows": 86321
+    },
+    "validation": {
+      "candidate_windows": 28930,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 325,
+      "accepted_windows": 28605
+    },
+    "test": {
+      "candidate_windows": 49640,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 160,
+      "accepted_windows": 49480
+    }
+  },
+  "epochs_completed": 62,
+  "best_validation_loss": 0.0501922108232975,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.17980003356933594,
+      "rmse": 0.26134162035481134,
+      "r2": 0.989346981048584,
+      "persistence_mae": 0.1572534292936325,
+      "persistence_rmse": 0.24506404194180142,
+      "improvement_over_persistence_mae": -0.02254660427570343,
+      "improvement_over_persistence_rmse": -0.01627757841300992
+    },
+    "Humidity": {
+      "mae": 0.8366455435752869,
+      "rmse": 1.24216893020281,
+      "r2": 0.9843918681144714,
+      "persistence_mae": 0.7132052779197693,
+      "persistence_rmse": 1.1577836767977066,
+      "improvement_over_persistence_mae": -0.12344026565551758,
+      "improvement_over_persistence_rmse": -0.0843852534051035
+    },
+    "CO2": {
+      "mae": 33.43857192993164,
+      "rmse": 49.53798505077316,
+      "r2": 0.9276195168495178,
+      "persistence_mae": 33.75996398925781,
+      "persistence_rmse": 48.97371544703853,
+      "improvement_over_persistence_mae": 0.3213920593261719,
+      "improvement_over_persistence_rmse": -0.5642696037346298
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "model_name": "gru",
+  "lookback": 12,
+  "horizon": 1,
+  "interval_minutes": 5.0,
+  "hyperparameters": {
+    "recurrent_units": 32,
+    "dense_units": 16,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "max_epochs": 100,
+    "patience": 10,
+    "random_seed": 42
+  },
+  "window_counts": {
+    "train": 83610,
+    "validation": 41340,
+    "test": 71650
+  },
+  "window_audit": {
+    "train": {
+      "candidate_windows": 83610,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 0,
+      "accepted_windows": 83610
+    },
+    "validation": {
+      "candidate_windows": 41770,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 430,
+      "accepted_windows": 41340
+    },
+    "test": {
+      "candidate_windows": 71655,
+      "rejected_time_gaps": 0,
+      "rejected_missing_measurements": 5,
+      "accepted_windows": 71650
+    }
+  },
+  "epochs_completed": 50,
+  "best_validation_loss": 0.03018083982169628,
+  "test_metrics": {
+    "Temperature": {
+      "mae": 0.37394827604293823,
+      "rmse": 0.6213601218932366,
+      "r2": 0.9786099195480347,
+      "persistence_mae": 0.24576690793037415,
+      "persistence_rmse": 0.38224479854006244,
+      "improvement_over_persistence_mae": -0.1281813681125641,
+      "improvement_over_persistence_rmse": -0.2391153233531742
+    },
+    "Humidity": {
+      "mae": 1.4124722480773926,
+      "rmse": 2.506613661716297,
+      "r2": 0.9618065357208252,
+      "persistence_mae": 1.1581059694290161,
+      "persistence_rmse": 2.083779694105909,
+      "improvement_over_persistence_mae": -0.25436627864837646,
+      "improvement_over_persistence_rmse": -0.42283396761038805
+    },
+    "CO2": {
+      "mae": 29.745948791503906,
+      "rmse": 44.075998043329946,
+      "r2": 0.9392728209495544,
+      "persistence_mae": 24.29688835144043,
+      "persistence_rmse": 38.28185745691505,
+      "improvement_over_persistence_mae": -5.449060440063477,
+      "improvement_over_persistence_rmse": -5.794140586414898
+    }
+  }
+}
